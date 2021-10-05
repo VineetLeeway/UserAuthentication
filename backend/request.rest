@@ -1,0 +1,12 @@
+GET http://localhost:5000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNWJmNjI3ZDkyYTAxNzFmMWFjNGQ3NSIsImlhdCI6MTYzMzQxNzI3NywiZXhwIjoxNjMzNDE3NTc3fQ.kuTZZEBEVl31wluA2NkMjF0n4Iy5MYRaoVSpAd-2S0g
+
+###
+POST http://localhost:5000/api/users/login
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNWJmNjI3ZDkyYTAxNzFmMWFjNGQ3NSIsImlhdCI6MTYzMzQxNzI3NywiZXhwIjoxNjMzNDE3NTc3fQ.kuTZZEBEVl31wluA2NkMjF0n4Iy5MYRaoVSpAd-2S0g
+Content-Type: application/json
+{
+    "email": "vineettiwari1@mail.com",
+    "password":"90909090"
+
+}

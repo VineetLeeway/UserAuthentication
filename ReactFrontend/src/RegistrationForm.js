@@ -11,6 +11,7 @@ function RegistrationForm(props) {
     const [message, setMessage] = useState(false)
     const [error, setError] = useState(false)
     const [emailError, setemailError] = useState(false)
+    const [nameError, setNameError] = useState(false)
     const handleChange = (e) => {
         const {id , value} = e.target   
         setState(prevState => ({
@@ -18,8 +19,17 @@ function RegistrationForm(props) {
             [id] : value
         }))
     }
+    const validateName = ()=>{
+        if(state.fullname === ''){
+                setNameError('Name Should be Filled')
+        }
+        else{
+
+        }
+    } 
+
   const emailValidation = ()=>{
-      if(!state.email.includes("@" || ".")){
+      if(!state.email.includes("@" && ".")){
         setemailError('Please Enter Valid Email Id')
       }
       else{
@@ -38,6 +48,7 @@ function RegistrationForm(props) {
     const handleSubmitClick = async (e) => {
         const {  fullname, email, mobile_no, password, confirm_password} = state;
         e.preventDefault();
+        validateName()
         phoneNumber()
         emailValidation()
         if(state.password !== state.confirm_password) {
@@ -79,6 +90,7 @@ function RegistrationForm(props) {
                         onChange={handleChange} 
                     />
                 </div>
+                { nameError && <p style={{backgroundColor:'red', color:'white'}}>{nameError}</p>}
                 <div className="form-group text-left">
                 <label htmlFor="InputEmail1">Email address</label>
                 <input type="email" 

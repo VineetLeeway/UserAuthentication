@@ -6,6 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require('./routes/userRoutes');
 const { notFound } = require("./middleware/errorHandles");
+const jwtVeify = require("./middleware/auth");
 
 
 dotenv.config();
@@ -14,7 +15,7 @@ connectDB();
 app.use(express.urlencoded());
 app.use(express.json()) //to accept the data in json format from the user // All comments are commented by vineet tiwari
 
-app.get("/", (req, res) => {
+app.get("/",jwtVeify, (req, res) => {
   res.send("welcome user");
 });
 app.get("/api/data", (req, res) => {

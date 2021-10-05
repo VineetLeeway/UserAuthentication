@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const MONGO_URI = ""
+const MONGO_URI = "mongodb+srv://vineet:Vineet8010@cluster0.kf1ci.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const connectDB = async ()=>{
     try {
         const conn = await mongoose.connect(MONGO_URI, {
